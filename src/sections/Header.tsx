@@ -1,6 +1,6 @@
 export const Header = () => {
   return (
-    <div className="fixed top-3 flex items-center justify-center w-full">
+    <div className="fixed top-3 z-10 flex w-full items-center justify-center">
       <nav>
         <ul className="flex gap-1 rounded-full border border-white/15 bg-white/10 p-0.5 backdrop-blur">
           <li className="nav-item">
