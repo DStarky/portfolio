@@ -62,14 +62,8 @@ export const ProjectsSection = () => {
           {portfolioProjects.map(project => (
             <Card
               key={project.title}
-              className="px-8 pt-8 md:px-10 md:pt-12 lg:px-20 lg:pt-16"
+              className="px-8 pt-8 md:px-10 md:pt-12 lg:px-20 lg:pt-16 pb-0"
             >
-              <div
-                className="absolute inset-0 -z-10 opacity-5"
-                style={{
-                  backgroundImage: `url(${grainImage.src})`,
-                }}
-              ></div>
               <div className="lg:grid lg:grid-cols-2 lg:gap-16">
                 <div className="lg:pb-16">
                   <div className="inline-flex gap-2 bg-gradient-to-r from-emerald-300 to-sky-400 bg-clip-text text-sm font-bold uppercase tracking-widest text-transparent">
