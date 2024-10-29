@@ -1,5 +1,6 @@
 import Image from 'next/image';
 
+import Card from '@/components/Card';
 import SectionHeader from '@/components/SectionHeader';
 
 import ArrowUpRightIcon from '@/assets/icons/arrow-up-right.svg';
@@ -59,9 +60,9 @@ export const ProjectsSection = () => {
         />
         <div className="mt-10 flex flex-col gap-20 md:mt-20">
           {portfolioProjects.map(project => (
-            <div
+            <Card
               key={project.title}
-              className="relative z-0 overflow-hidden rounded-3xl bg-gray-800 px-8 pt-8 after:pointer-events-none after:absolute after:inset-0 after:z-10 after:rounded-3xl after:outline after:outline-2 after:-outline-offset-2 after:outline-white/20 after:content-[''] md:px-10 md:pt-12 lg:px-20 lg:pt-16"
+              className="px-8 pt-8 md:px-10 md:pt-12 lg:px-20 lg:pt-16"
             >
               <div
                 className="absolute inset-0 -z-10 opacity-5"
@@ -106,7 +107,7 @@ export const ProjectsSection = () => {
                   />
                 </div>
               </div>
-            </div>
+            </Card>
           ))}
         </div>
       </div>
