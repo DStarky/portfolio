@@ -2,6 +2,7 @@ import Image from 'next/image';
 
 import Card from '@/components/Card';
 import SectionHeader from '@/components/SectionHeader';
+import TechIcon from '@/components/TechIcon';
 
 import ChromeIcon from '@/assets/icons/chrome.svg';
 import CSSIcon from '@/assets/icons/css3.svg';
@@ -11,31 +12,64 @@ import ReactIcon from '@/assets/icons/react.svg';
 import JavascriptIcon from '@/assets/icons/square-js.svg';
 import StarIcon from '@/assets/icons/star.svg';
 import bookImage from '@/assets/images/book-cover.png';
+import mapImage from '@/assets/images/map.png';
+import smileMemoji from '@/assets/images/memoji-smile.png';
 
 const toolboxItems = [
   {
     title: 'JavaScript',
-    icon: <JavascriptIcon />,
+    iconType: JavascriptIcon,
   },
   {
     title: 'HTML5',
-    icon: <HTMLIcon />,
+    iconType: HTMLIcon,
   },
   {
     title: 'CSS3',
-    icon: <CSSIcon />,
+    iconType: CSSIcon,
   },
   {
     title: 'React',
-    icon: <ReactIcon />,
+    iconType: ReactIcon,
   },
   {
     title: 'Chrome',
-    icon: <ChromeIcon />,
+    iconType: ChromeIcon,
   },
   {
     title: 'Github',
-    icon: <GithubIcon />,
+    iconType: GithubIcon,
+  },
+];
+
+const hobbies = [
+  {
+    title: 'Painting',
+    emoji: '🎨',
+  },
+  {
+    title: 'Photography',
+    emoji: '📷',
+  },
+  {
+    title: 'Gaming',
+    emoji: '🎮',
+  },
+  {
+    title: 'Music',
+    emoji: '🎧',
+  },
+  {
+    title: 'Fitness',
+    emoji: '🏋️‍♀️',
+  },
+  {
+    title: 'Reading',
+    emoji: '📚',
+  },
+  {
+    title: 'Hiking',
+    emoji: '🥾',
   },
 ];
 
@@ -70,14 +104,37 @@ export const AboutSection = () => {
           </div>
           <div>
             {toolboxItems.map(item => (
-              <div
-                key={item.title}
-              >
-                <span>{item.icon}</span>
+              <div key={item.title}>
+                <TechIcon component={item.iconType} />
                 <span>{item.title}</span>
               </div>
             ))}
           </div>
+        </Card>
+        <Card>
+          <div>
+            <StarIcon />
+            <h3>Beyond the Code</h3>
+            <p>Explore my interests and hobbies beyond the digital realm.</p>
+          </div>
+        </Card>
+        <div>
+          {hobbies.map(hobby => (
+            <div key={hobby.title}>
+              <span>{hobby.emoji}</span>
+              <span>{hobby.title}</span>
+            </div>
+          ))}
+        </div>
+        <Card>
+          <Image
+            src={mapImage}
+            alt="Map"
+          />
+          <Image
+            src={smileMemoji}
+            alt="Smiling Memoji"
+          />
         </Card>
       </div>
     </div>
