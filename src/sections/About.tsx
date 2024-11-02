@@ -4,6 +4,7 @@ import Card from '@/components/Card';
 import CardHeader from '@/components/CardHeader';
 import SectionHeader from '@/components/SectionHeader';
 import TechIcon from '@/components/TechIcon';
+import ToolboxItems from '@/components/ToolboxItems';
 
 import ChromeIcon from '@/assets/icons/chrome.svg';
 import CSSIcon from '@/assets/icons/css3.svg';
@@ -96,20 +97,21 @@ export const AboutSection = () => {
               />
             </div>
           </Card>
-          <Card>
+          <Card className="h-[320px] p-0">
             <CardHeader
               title="My Toolbox"
               description="Explore the technologies and tools I use to craft exceptional
                 digital experience."
+              className="px-6 pt-6"
             />
-            <div>
-              {toolboxItems.map(item => (
-                <div key={item.title}>
-                  <TechIcon component={item.iconType} />
-                  <span>{item.title}</span>
-                </div>
-              ))}
-            </div>
+            <ToolboxItems
+              items={toolboxItems}
+              className="mt-6"
+            />
+            <ToolboxItems
+              items={toolboxItems}
+              className="mt-6"
+            />
           </Card>
           <Card>
             <CardHeader
