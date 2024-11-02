@@ -48,30 +48,44 @@ const hobbies = [
   {
     title: 'Painting',
     emoji: '🎨',
+    left: '5%',
+    top: '5%',
   },
   {
     title: 'Photography',
     emoji: '📷',
-  },
-  {
-    title: 'Gaming',
-    emoji: '🎮',
-  },
-  {
-    title: 'Music',
-    emoji: '🎧',
-  },
-  {
-    title: 'Fitness',
-    emoji: '🏋️‍♀️',
-  },
-  {
-    title: 'Reading',
-    emoji: '📚',
+    left: '50%',
+    top: '5%',
   },
   {
     title: 'Hiking',
     emoji: '🥾',
+    left: '45%',
+    top: '70%',
+  },
+  {
+    title: 'Gaming',
+    emoji: '🎮',
+    left: '10%',
+    top: '35%',
+  },
+  {
+    title: 'Music',
+    emoji: '🎧',
+    left: '35%',
+    top: '40%',
+  },
+  {
+    title: 'Fitness',
+    emoji: '🏋️‍♀️',
+    left: '70%',
+    top: '45%',
+  },
+  {
+    title: 'Reading',
+    emoji: '📚',
+    left: '5%',
+    top: '65%',
   },
 ];
 
@@ -114,15 +128,25 @@ export const AboutSection = () => {
               itemsWrapperClassName="-translate-x-1/2"
             />
           </Card>
-          <Card>
+          <Card className="flex h-[320px] flex-col p-0">
             <CardHeader
               title="Beyond the Code"
               description="Explore my interests and hobbies beyond the digital realm."
+              className="px-6 py-6"
             />
-            <div>
+            <div className="relative flex-1">
               {hobbies.map(hobby => (
-                <div key={hobby.title}>
-                  <span>{hobby.emoji}</span>
+                <div
+                  key={hobby.title}
+                  className="absolute inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 px-6 py-1.5"
+                  style={{
+                    left: hobby.left,
+                    top: hobby.top,
+                  }}
+                >
+                  <span className="font-medium text-gray-950">
+                    {hobby.emoji}
+                  </span>
                   <span>{hobby.title}</span>
                 </div>
               ))}
