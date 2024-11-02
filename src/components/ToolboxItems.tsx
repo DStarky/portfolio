@@ -5,9 +5,11 @@ import TechIcon from './TechIcon';
 const ToolboxItems = ({
   items,
   className = '',
+  itemsWrapperClassName = '',
 }: {
   items: { title: string; iconType: React.ElementType }[];
   className?: string;
+  itemsWrapperClassName?: string;
 }) => {
   return (
     <div
@@ -16,7 +18,12 @@ const ToolboxItems = ({
         className,
       )}
     >
-      <div className="flex flex-none gap-6 py-0.5">
+      <div
+        className={twMerge(
+          'flex flex-none gap-6 py-0.5 pr-6',
+          itemsWrapperClassName,
+        )}
+      >
         {items.map(item => (
           <div
             key={item.title}
