@@ -1,6 +1,7 @@
 import Image from 'next/image';
 
 import Card from '@/components/Card';
+import CardHeader from '@/components/CardHeader';
 import SectionHeader from '@/components/SectionHeader';
 import TechIcon from '@/components/TechIcon';
 
@@ -84,15 +85,10 @@ export const AboutSection = () => {
         />
         <div className="mt-20">
           <Card className="h-[320px]">
-            <div className="flex flex-col">
-              <div className="inline-flex items-center gap-2">
-                <StarIcon className="size-9 text-emerald-300" />
-                <h3 className="font-serif text-3xl">My Reads</h3>
-              </div>
-              <p className="mt-2 text-sm text-white/60">
-                Explore the books shaping my perspectives.
-              </p>
-            </div>
+            <CardHeader
+              title="My Reads"
+              description="Explore the books shaping my perspectives."
+            />
             <div className="mx-auto mt-8 w-40">
               <Image
                 src={bookImage}
@@ -101,14 +97,11 @@ export const AboutSection = () => {
             </div>
           </Card>
           <Card>
-            <div>
-              <StarIcon />
-              <h3>My Toolbox</h3>
-              <p>
-                Explore the technologies and tools I use to craft exceptional
-                digital experience.
-              </p>
-            </div>
+            <CardHeader
+              title="My Toolbox"
+              description="Explore the technologies and tools I use to craft exceptional
+                digital experience."
+            />
             <div>
               {toolboxItems.map(item => (
                 <div key={item.title}>
@@ -119,20 +112,20 @@ export const AboutSection = () => {
             </div>
           </Card>
           <Card>
+            <CardHeader
+              title="Beyond the Code"
+              description="Explore my interests and hobbies beyond the digital realm."
+            />
             <div>
-              <StarIcon />
-              <h3>Beyond the Code</h3>
-              <p>Explore my interests and hobbies beyond the digital realm.</p>
+              {hobbies.map(hobby => (
+                <div key={hobby.title}>
+                  <span>{hobby.emoji}</span>
+                  <span>{hobby.title}</span>
+                </div>
+              ))}
             </div>
           </Card>
-          <div>
-            {hobbies.map(hobby => (
-              <div key={hobby.title}>
-                <span>{hobby.emoji}</span>
-                <span>{hobby.title}</span>
-              </div>
-            ))}
-          </div>
+
           <Card>
             <Image
               src={mapImage}
